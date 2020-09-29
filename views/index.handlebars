@@ -1,0 +1,19 @@
+<h1 class="text-center mb-3">{{title}}</h1>
+<form action="/api/routes" method="POST" class="mb-4">
+    <div class="form-group">
+        <label for="topic">Topic</label>
+        <input type="text" name="topic" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="content">Content</label>
+        <input type="text" name="content" class="form-control">
+    </div>
+
+    <input type="submit" class="btn btn-block">
+</form>
+<h3>Notes Saved</h3>
+<ul class="list-group">
+    {{#each notesdata}}
+    <li class="list-group-item">{{this.topic}}<br />{{this.content}}</li>
+    {{/each}}
+</ul>
