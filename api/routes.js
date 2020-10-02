@@ -23,4 +23,9 @@ router.post("/", (req, res) => {
   return res.redirect("/");
 });
 
+//delete specific message
+let deleted = router.delete("/" + ":id", (req, res) => {
+  res.json(notesdata.filter((note) => note.id !== req.params.id));
+});
+
 module.exports = router;
